@@ -51,38 +51,81 @@ const people = [
       'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
     lastSeen: null,
   },
+  {
+    name: 'Tom Cook',
+    email: 'tom.cook@example.com',
+    role: 'Director of Product',
+    imageUrl:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: null,
+  },
+  {
+    name: 'Tom Cook',
+    email: 'tom.cook@example.com',
+    role: 'Director of Product',
+    imageUrl:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: null,
+  },
+  {
+    name: 'Tom Cook',
+    email: 'tom.cook@example.com',
+    role: 'Director of Product',
+    imageUrl:
+      'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: null,
+  },
 ];
 
 export default function StackLayout() {
   return (
-    <ul role='list' className='devided-y'>
-      {people.map((person) => (
-        <li key={person.email} className='flex justify-between gap-x-8 py-5'>
-          <div className='flex gap-x-1'>
-            <li className='w-full border-b  rounded-t-lg'>
-              <div className='flex items-center pl-5'>
-                <img
-                  className='h-12 w-12 flex-none rounded-full bg-gray-50'
-                  src={person.imageUrl}
-                  alt=''
-                />
+    <div className='flex flex-col overflow-y-auto h-96 w-full'>
+      {/* <!-- user list --> */}
 
-                <div className='min-w-0 flex-auto'>
-                  <p className='text-sm font-semibold leading-6 text-gray-900'>
-                    {person.name}
-                  </p>
+      <ul
+        role='list'
+        className='m-5 divide-y divide-gray-100 shadow-sm overflow-auto'
+      >
+        {people.map((person) => (
+          <li key={person.email} className='flex justify-between gap-x-6 py-3'>
+            <div className='flex gap-x-4 '>
+              <img
+                className='h-12 w-12 flex-none rounded-full bg-gray-50'
+                src={person.imageUrl}
+                alt=''
+              />
+              <div className='min-w-0 flex-auto '>
+                <h4 className='mt-1 truncate text-sm  leading-5 text-gray-800'>
+                  {person.name}
+                </h4>
+                <div className='hidden sm:flex sm:flex-col'>
+                  {person.lastSeen ? (
+                    <p className='mt-1 text-xs leading-5 text-gray-500'>
+                      Last seen
+                      <time dateTime={person.lastSeenDateTime}>
+                        {person.lastSeen}
+                      </time>
+                    </p>
+                  ) : (
+                    <div className='mt-2 flex items-center gap-x-1.5'>
+                      <div className='flex-none rounded-full bg-emerald-500/20 p-1'>
+                        <div className='h-1.5 w-1.5 rounded-full bg-emerald-500' />
+                      </div>
+                      <p className='text-xs leading-5 text-gray-500'>Online</p>
+                    </div>
+                  )}
                 </div>
               </div>
-            </li>
-          </div>
-          <input
-            id='vue-checkbox'
-            type='checkbox'
-            value=''
-            className='w-4 h-4 text-blue-600 bg-gray-100rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-5 dark:bg-gray-600 dark:border-gray-100'
-          />
-        </li>
-      ))}
-    </ul>
+            </div>
+            <input
+              type='checkbox'
+              value=''
+              className=' cursor-pointer m-5 w-4 h-4 text-blue-600 bg-gray-100rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-5 dark:bg-gray-600 dark:border-gray-100'
+            />
+          </li>
+        ))}
+      </ul>
+      {/* <!-- end user list --> */}
+    </div>
   );
 }

@@ -1,11 +1,14 @@
+import { Link, useNavigate } from 'react-router-dom';
+
 export default function Example() {
+  const navigate = useNavigate();
   return (
     <>
-      <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
+      <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-5 lg:px-8'>
         <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
           <div className='hidden sm:flex sm:justify-center'>
             <img
-              src='img/assets/chatapp.gif'
+              src='assets/chatapp.gif'
               className='h-15'
               alt='Flowbite Logo'
             />
@@ -80,6 +83,7 @@ export default function Example() {
 
             <div>
               <button
+                onClick={() => navigate('/chat')}
                 type='submit'
                 className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
               >
@@ -90,12 +94,12 @@ export default function Example() {
 
           <p className='mt-10 text-center text-sm text-gray-500'>
             Alerdy have account an?{' '}
-            <a
-              href={`/login`}
+            <Link
+              to={`/login`}
               className='font-semibold leading-6 text-indigo-600 hover:text-indigo-500'
             >
               Sgin in
-            </a>
+            </Link>
           </p>
         </div>
       </div>

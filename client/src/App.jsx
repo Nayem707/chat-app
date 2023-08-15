@@ -1,13 +1,10 @@
-import Header from './Components/Header';
 import { Outlet } from 'react-router-dom';
-// import Chat from './page/Chat';
-// import Home from './page/Home';
-// import Login from './page/Login';
+import NavStyle from './Components/NavStyle';
 
 function App() {
   return (
     <div>
-      <Header />
+      <NavStyle />
       <Outlet />
     </div>
   );

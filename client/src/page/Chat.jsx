@@ -4,8 +4,8 @@ import ChatTable from '../Components/ChatTable';
 
 export default function Chat() {
   return (
-    <>
+    <div className=''>
       <ChatTable />
-    </>
+    </div>
   );
 }
