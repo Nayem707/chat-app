@@ -12,7 +12,7 @@ const About = () => {
       </div>
       <a
         rel='noopener noreferrer'
-        href='https://github.com/Nayem707/note-app'
+        href='https://github.com/Nayem707/chat-app'
         target='blank'
         aria-label='GitHub'
         className='p-2 text-center items-center justify-center flex gap-3 rounded-md dark:text-gray-100 hover:dark:text-violet-400'
