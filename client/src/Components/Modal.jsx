@@ -6,7 +6,7 @@ export default function Modal() {
   return (
     <>
       <button
-        className='bg-green-600 rounded text-white hover:bg-sky-700 p-1'
+        className='bg-green-600 rounded text-white hover:bg-sky-700 p-1.5'
         type='button'
         onClick={() => setShowModal(true)}
       >
