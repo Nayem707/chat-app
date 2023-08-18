@@ -167,23 +167,24 @@ const ChatTable = () => {
     <>
       {/* <!-- component -->
 <!-- This is an example component --> */}
-      <div className='shadow-lg '>
+      <div className='shadow-lg'>
         {/* <!-- headaer --> */}
-        <div className='m-5 flex justify-between items-center bg-white border-b-2'>
+        <div className=' flex justify-between items-center bg-white border-b-2'>
           <div className='font-semibold text-2xl'>
-            <div className='lg:flex lg:flex-1 gap-2 lg:justify-center'>
-              <a className='text-sm font-semibold leading-6 text-gray-900'>
+            <div className='lg:flex lg:flex-1 gap-2 lg:justify-center p-5'>
+              <a className='text-sm font-semibold leading-6 '>
                 <Modal />
               </a>
-              <a className='text-sm font-semibold leading-6 text-gray-900'>
-                <button className='bg-slate-600 rounded text-white hover:bg-sky-700 p-1'>
+
+              <a className='text-sm font-semibold leading-6'>
+                <button className='bg-slate-600 rounded text-white hover:bg-sky-700 p-1.5 '>
                   Join Room
                 </button>
               </a>
             </div>
           </div>
           {/* <!-- search compt --> */}
-          <div className='py-5 px-0'>
+          <div className='px-5'>
             <label className='block'>
               <input
                 className='py-2 pl-2 pr-10 placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md  shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm'
@@ -198,28 +199,28 @@ const ChatTable = () => {
         {/* <!-- end header -->
     <!-- Chatting --> */}
 
-        <div className=' flex flex-row justify-between bg-white'>
+        <div className=' flex flex-row justify-between divide-x-2'>
           {/* <!-- chat list --> */}
           <div className='flex flex-col w-2/4 '>
             {/* <!-- user list --> */}
-            <h1 className=' text-center font-semibold text-xl'>All User</h1>
+            <h1 className=' font-semibold text-xl px-5 pt-2'>Chat List</h1>
             <ul
               role='list'
-              className='m-5 h-96 divide-y divide-gray-200 shadow-sm overflow-auto'
+              className='h-96 divide-y divide-gray-200 shadow-sm overflow-auto'
             >
               {people.map((person) => (
                 <li
                   key={person.email}
-                  className='flex justify-between gap-x-6 py-3 hover:bg-slate-300 rounded cursor-pointer'
+                  className='p-5 flex justify-between py-2.5 hover:bg-slate-300 rounded cursor-pointer'
                 >
-                  <div className='flex gap-x-4'>
+                  <div className='flex gap-x-4 '>
                     <img
                       className='h-12 w-12 flex-none rounded-full bg-gray-50'
                       src={person.imageUrl}
                       alt=''
                     />
-                    <div className='min-w-0 flex-auto '>
-                      <h4 className='mt-1 truncate text-sm  leading-5 text-gray-800'>
+                    <div className='flex-auto '>
+                      <h4 className='truncate text-sm  leading-5 text-gray-800'>
                         {person.name}
                       </h4>
                       <div className='hidden sm:flex sm:flex-col'>
@@ -249,20 +250,22 @@ const ChatTable = () => {
             {/* <!-- end user list --> */}
           </div>
           {/* <!-- end chat list --> */}
+
           {/* <!-- message --> */}
-          <div className=' w-full px-5 flex flex-col justify-between '>
-            <div className='flex flex-col mt-5'>
+          <div className=' w-full flex flex-col justify-between '>
+            <div className='flex flex-col h-96 overflow-auto'>
               {/* Chat mennagement list */}
+
               {chat.map((msg) => {
                 return (
-                  <div key={msg}>
-                    <div className='flex justify-end mb-4'>
-                      <div className='mr-2 py-3 px-4 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white'>
+                  <div key={msg} className='p-5 py-1 '>
+                    <div className='flex justify-end'>
+                      <div className=' mr-2 p-2 bg-blue-400 rounded-bl-3xl rounded-tl-3xl rounded-tr-xl text-white'>
                         {msg}
                       </div>
                       <img
                         src='https://source.unsplash.com/vpOeXr5wmR4/600x600'
-                        className='object-cover h-8 w-8 rounded-full'
+                        className='object-cover h-8 w-8 rounded-full cursor-pointer'
                         alt=''
                       />
                     </div>
@@ -272,27 +275,29 @@ const ChatTable = () => {
             </div>
 
             {/* Chat Submit Button */}
-            <div className=' '>
-              <form className='space-y-2 mb-5' onSubmit={handleSubmitForm}>
-                <div>
-                  <div className='mt-5'>
-                    <input
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                      name='text'
-                      type='text'
-                      className='w-full bg-gray-300 py-5 px-3 rounded-xl'
-                      placeholder='type your message here...'
-                    />
-                  </div>
+            <div className='px-3 mb-1'>
+              <form
+                className=' flex justify-center items-center gap-2'
+                onSubmit={handleSubmitForm}
+              >
+                <div className='w-full'>
+                  <input
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    name='text'
+                    type='text'
+                    className='w-full h-24 bg-gray-300 py-2 p-2 rounded-xl '
+                    placeholder='type your message here...'
+                  />
                 </div>
-
-                <button
-                  type='submit'
-                  className='flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
-                >
-                  Send
-                </button>
+                <div>
+                  <button
+                    type='submit'
+                    className=' flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600'
+                  >
+                    Send
+                  </button>
+                </div>
               </form>
             </div>
           </div>
