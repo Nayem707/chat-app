@@ -58,6 +58,42 @@ const people = [
     lastSeenDateTime: '2023-01-23T13:23Z',
   },
   {
+    name: 'Leslie Alexander',
+    email: 'leslie.alexander@example.com',
+    role: 'Co-Founder / CEO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
+    name: 'Leslie Alexander',
+    email: 'leslie.alexander@example.com',
+    role: 'Co-Founder / CEO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
+    name: 'Leslie Alexander',
+    email: 'leslie.alexander@example.com',
+    role: 'Co-Founder / CEO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
+    name: 'Leslie Alexander',
+    email: 'leslie.alexander@example.com',
+    role: 'Co-Founder / CEO',
+    imageUrl:
+      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+    lastSeen: '3h ago',
+    lastSeenDateTime: '2023-01-23T13:23Z',
+  },
+  {
     name: 'Michael Foster',
     email: 'michael.foster@example.com',
     role: 'Co-Founder / CTO',
@@ -105,7 +141,7 @@ const people = [
 const ChatTable = () => {
   const [socket, setSocket] = useState(null);
   const [message, setMessage] = useState('');
-  const [chat, setChat] = useState([]);
+  const [chat, setChat] = useState(['hello', 'hi']);
 
   useEffect(() => {
     //server host
@@ -131,7 +167,7 @@ const ChatTable = () => {
     <>
       {/* <!-- component -->
 <!-- This is an example component --> */}
-      <div className='shadow-lg'>
+      <div className='shadow-lg '>
         {/* <!-- headaer --> */}
         <div className='m-5 flex justify-between items-center bg-white border-b-2'>
           <div className='font-semibold text-2xl'>
@@ -164,19 +200,19 @@ const ChatTable = () => {
 
         <div className=' flex flex-row justify-between bg-white'>
           {/* <!-- chat list --> */}
-          <div className='flex flex-col w-2/4 h-96'>
+          <div className='flex flex-col w-2/4 '>
             {/* <!-- user list --> */}
             <h1 className=' text-center font-semibold text-xl'>All User</h1>
             <ul
               role='list'
-              className='m-5 divide-y divide-gray-100 shadow-sm overflow-auto'
+              className='m-5 h-96 divide-y divide-gray-200 shadow-sm overflow-auto'
             >
               {people.map((person) => (
                 <li
                   key={person.email}
-                  className='flex justify-between gap-x-6 py-3'
+                  className='flex justify-between gap-x-6 py-3 hover:bg-slate-300 rounded cursor-pointer'
                 >
-                  <div className='flex gap-x-4 '>
+                  <div className='flex gap-x-4'>
                     <img
                       className='h-12 w-12 flex-none rounded-full bg-gray-50'
                       src={person.imageUrl}
@@ -189,7 +225,7 @@ const ChatTable = () => {
                       <div className='hidden sm:flex sm:flex-col'>
                         {person.lastSeen ? (
                           <p className='mt-1 text-xs leading-5 text-gray-500'>
-                            Last seen
+                            Last seen{' '}
                             <time dateTime={person.lastSeenDateTime}>
                               {person.lastSeen}
                             </time>
@@ -214,7 +250,7 @@ const ChatTable = () => {
           </div>
           {/* <!-- end chat list --> */}
           {/* <!-- message --> */}
-          <div className='w-full px-5 flex flex-col justify-between '>
+          <div className=' w-full px-5 flex flex-col justify-between '>
             <div className='flex flex-col mt-5'>
               {/* Chat mennagement list */}
               {chat.map((msg) => {
@@ -236,10 +272,10 @@ const ChatTable = () => {
             </div>
 
             {/* Chat Submit Button */}
-            <div className='py-5'>
-              <form className='space-y-6' onSubmit={handleSubmitForm}>
+            <div className=' '>
+              <form className='space-y-2 mb-5' onSubmit={handleSubmitForm}>
                 <div>
-                  <div className='mt-2'>
+                  <div className='mt-5'>
                     <input
                       value={message}
                       onChange={(e) => setMessage(e.target.value)}
@@ -262,7 +298,7 @@ const ChatTable = () => {
           </div>
           {/* <!-- end message --> */}
 
-          <div className='w-2/5 border-l-2 px-5'>
+          <div className='border-l-2 px-5'>
             <div className='flex flex-col'>
               <img
                 src='assets/chatapp.gif'

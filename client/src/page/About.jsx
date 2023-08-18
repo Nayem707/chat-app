@@ -110,7 +110,7 @@ const About = () => {
               Create a user-friendly and responsive UI for the application using
             </li>
             <li>
-              React. Create and implement components for note creation, viewing,
+              React. Create and implement components for User creation, viewing,
               updating, and deletion.
             </li>
           </p>
@@ -118,10 +118,10 @@ const About = () => {
           <p className='dark:text-gray-400'>
             <li>
               Create a RESTful API for managing CRUD actions (Create, Read,
-              Update, Delete) on notes and categories using Node.js and
+              Update, Delete) on User and categories using Node.js and
               Express.js.
             </li>
-            <li>To store notes and categories, use MongoDB as the database.</li>
+            <li>To store Chat and categories, use MongoDB as the database.</li>
             <li>
               Implementing server-side data validation and error handling.
             </li>
@@ -140,9 +140,9 @@ const About = () => {
           <h4 className='text-lg font-semibold pt-3'>
             Search Functionality & UX:
           </h4>{' '}
-          <p className='dark:text-gray-400'>Update continuing...</p>
+          <p className='dark:text-red-400 bg-slate-600'>Update Runing...</p>
           <h4 className='text-lg font-semibold pt-3'>Features:</h4>
-          <p className='dark:text-gray-400'>Update continuing...</p>
+          <p className='dark:text-red-400 bg-slate-600'>Update Runing...</p>
         </div>
       </div>
       <div className='pt-5 pb-5 border-t dark:border-gray-700'>
